@@ -90,7 +90,7 @@ const SignUpForm = () => {
                            onChange={handleChange}
                            value={confirmPassword}/>
 
-                <Button buttonType="" type="submit">Sign Up</Button>
+                <Button type="submit">Sign Up</Button>
             </form>
         </div>
     );
