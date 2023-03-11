@@ -4,7 +4,9 @@ import {
     signInWithPopup,
     GoogleAuthProvider,
     signInWithEmailAndPassword,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
 } from "firebase/auth";
 import {getFirestore, doc, getDoc, setDoc} from "firebase/firestore";
 
@@ -31,29 +33,32 @@ googleProvider.setCustomParameters({
 });
 
 // Sign In
-// Google
-export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+const auth = getAuth();
+const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
 
-// Email and Password
-export const signInUserWithEmailAndPassword = async (email, password) => {
+const signInUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) return;
 
     return await signInWithEmailAndPassword(auth, email, password);
 }
 
 // Sign Up
-export const createAuthUserWithEmailAndPassword = async (email, password) => {
+const createAuthUserWithEmailAndPassword = async (email, password) => {
     if (!email || !password) return;
 
     return await createUserWithEmailAndPassword(auth, email, password);
 };
 
+// Sign Out
+const signOutUser = async () => await signOut(auth);
+
+// Auth state changed
+const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
 
 // Firestore
-export const db = getFirestore();
+const db = getFirestore();
 
-export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
+const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
     if (!userAuth) return;
 
     const userDocRef = doc(db, "users", userAuth.uid);
@@ -73,5 +78,16 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInformation
 
     return userDocRef;
 }
+
+export {
+    auth,
+    db,
+    signInWithGooglePopup,
+    signInUserWithEmailAndPassword,
+    createAuthUserWithEmailAndPassword,
+    createUserDocumentFromAuth,
+    signOutUser,
+    onAuthStateChangedListener
+};
 
 
