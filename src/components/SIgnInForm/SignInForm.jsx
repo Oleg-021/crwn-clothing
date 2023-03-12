@@ -1,10 +1,7 @@
 import {useState} from "react";
 
-import {
-    createUserDocumentFromAuth,
-    signInUserWithEmailAndPassword,
-    signInWithGooglePopup
-} from "../../utils/firebase/firebase";
+import {signInUserWithEmailAndPassword, signInWithGooglePopup} from "../../utils/firebase/firebase";
+
 import FormInput from "../FormInput";
 import Button from "../Button";
 

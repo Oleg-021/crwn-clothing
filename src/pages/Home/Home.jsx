@@ -11,8 +11,6 @@ const Home = () => {
         {id: 5, title: "Men", imageUrl: "https://i.ibb.co/R70vBrQ/men.png"},
     ];
 
-    console.log("home render");
-
     return (
         <Categories categories={categories}/>
     );

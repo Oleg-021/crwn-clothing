@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom";
-
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import './index.scss';
+import App from './App';
+
 import {UserProvider} from "./store/contexts/user";
 import {ProductsProvider} from "./store/contexts/products";
+import {CartProvider} from "./store/contexts/cart";
+
+import './index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -15,7 +17,9 @@ root.render(
     <BrowserRouter>
         <UserProvider>
             <ProductsProvider>
-                <App/>
+                <CartProvider>
+                    <App/>
+                </CartProvider>
             </ProductsProvider>
         </UserProvider>
     </BrowserRouter>
