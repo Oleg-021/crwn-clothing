@@ -2,7 +2,7 @@ import {useContext} from "react";
 
 import Button from "../Button";
 
-import {CartContext} from "../../store/contexts/cart";
+import {CartContext} from "../../store/contexts/cart.context";
 
 import "./styles.scss";
 

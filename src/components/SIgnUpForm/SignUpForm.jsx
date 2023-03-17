@@ -1,11 +1,11 @@
 import {useContext, useState} from "react";
 
-import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from "../../utils/firebase/firebase";
+import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from "../../utils/firebase/firebase.utils";
 
 import FormInput from "../FormInput";
 import Button from "../Button";
 
-import {UserContext} from "../../store/contexts/user";
+import {UserContext} from "../../store/contexts/user.context";
 
 import "./styles.scss";
 

@@ -5,10 +5,10 @@ import {ReactComponent as CrwnLogo} from "../../assets/crown.svg";
 import CartIcon from "../CartIcon";
 import CartDropDown from "../CartDropDown/CartDropDown";
 
-import {UserContext} from "../../store/contexts/user";
-import {CartContext} from "../../store/contexts/cart";
+import {UserContext} from "../../store/contexts/user.context";
+import {CartContext} from "../../store/contexts/cart.context";
 
-import {signOutUser} from "../../utils/firebase/firebase";
+import {signOutUser} from "../../utils/firebase/firebase.utils";
 
 import "./styles.scss";
 

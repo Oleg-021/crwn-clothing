@@ -1,26 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {BrowserRouter} from "react-router-dom";
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import reportWebVitals from "./reportWebVitals";
 
-import App from './App';
+import App from "./App";
 
-import {UserProvider} from "./store/contexts/user";
-import {ProductsProvider} from "./store/contexts/products";
-import {CartProvider} from "./store/contexts/cart";
+import { UserProvider } from "./store/contexts/user.context";
+import { CategoriesProvider } from "./store/contexts/categories.context";
+import { CartProvider } from "./store/contexts/cart.context";
 
-import './index.scss';
+import "./index.scss";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
     <BrowserRouter>
         <UserProvider>
-            <ProductsProvider>
+            <CategoriesProvider>
                 <CartProvider>
-                    <App/>
+                    <App />
                 </CartProvider>
-            </ProductsProvider>
+            </CategoriesProvider>
         </UserProvider>
     </BrowserRouter>
 );
