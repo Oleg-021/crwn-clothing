@@ -1,4 +1,3 @@
-import Button, {BUTTON_TYPES_CLASSES} from "./Button";
+import Button from "./Button";
 
-export {BUTTON_TYPES_CLASSES};
 export default Button;
