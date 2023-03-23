@@ -1,14 +1,8 @@
-import {
-    BaseButton,
-    GoogleSignInButton,
-    InvertedButton,
-} from "./button.styles.jsx";
+import {memo} from "react";
 
-export const BUTTON_TYPES_CLASSES = {
-    base: "base",
-    google: "google-sign-in",
-    inverted: "inverted",
-};
+import {BUTTON_TYPES_CLASSES} from "../../constants";
+
+import {BaseButton, GoogleSignInButton, InvertedButton,} from "./button.styles.jsx";
 
 const getButton = (buttonType = BUTTON_TYPES_CLASSES.base) => {
     return {
@@ -24,4 +18,4 @@ const Button = ({ children, buttonType, ...otherProps }) => {
     return <CustomButton {...otherProps}>{children}</CustomButton>;
 };
 
-export default Button;
+export default memo(Button);

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import {memo, useContext} from "react";
 import { Outlet } from "react-router-dom";
 
 import { ReactComponent as CrownLogo } from "../../assets/crown.svg";
@@ -48,4 +48,4 @@ const Navigation = () => {
     );
 };
 
-export default Navigation;
+export default memo(Navigation);

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import {memo, useContext} from "react";
 
 import { ReactComponent as ShoppingIcon } from "../../assets/shopping-bag.svg";
 
@@ -21,4 +21,4 @@ const CartIcon = () => {
     );
 };
 
-export default CartIcon;
+export default memo(CartIcon);
