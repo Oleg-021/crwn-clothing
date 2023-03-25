@@ -1,12 +1,9 @@
 import { useState } from "react";
 
-import {
-    signInUserWithEmailAndPassword,
-    signInWithGooglePopup,
-} from "../../utils/firebase/firebase.utils";
-
+import {signInUserWithEmailAndPassword, signInWithGooglePopup,} from "../../utils/firebase/firebase.utils";
 import FormInput from "../FormInput";
-import Button, { BUTTON_TYPES_CLASSES } from "../Button";
+import Button from "../Button";
+import {BUTTON_TYPES_CLASSES} from "../../constants";
 
 import "./styles.scss";
 
